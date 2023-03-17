@@ -1,0 +1,952 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Noto+Sans+TC:wght@300&family=Poppins:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    /* font-style: 10px; */
+    font-family: 'cwTeXYen','Montserrat',"Poppins",sans-serif;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 0 auto; */
+}
+.section-title{
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+p{
+    font-size: 1.4rem;
+    letter-spacing: .1rem;
+    margin-top: 10px;
+    line-height: 2.5rem;
+    font-weight: 300;
+}
+
+/* Header */
+#header{
+    position: fixed;
+    z-index: 100;
+    left: 0;top: 0;
+    width: 100vw;
+    height: auto;
+}
+#header .header{
+    min-height: 7vh;
+    background-color: #283781;
+    box-shadow: 0 3px 8px rgb(0, 0, 0, 0.3);
+    transition: .4s ease background-color, box-shadow;
+}
+#header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;height: 100%;
+    max-width: 1300px;
+    padding: 0 20px;
+}
+#header .brand h1{
+    color: white;
+    font-size: 1.8rem;
+}
+#header .brand h1 span{
+    color: #F8B035;
+}
+#header .nav-list ul{
+    list-style: none;
+    position: absolute;
+    background-color: #283781;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: .5s ease left;
+}
+#header .nav-list ul.active{
+    left: 0;
+}
+#header .nav-list ul a{
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block;
+    transition: .3s ease color;
+}
+#header .nav-list ul a:hover{
+    color: #F8B035;
+}
+#header .hamburger{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    transform: scale(.6);
+    margin-right: 10px;
+}
+#header .hamburger .bar{
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+#header .hamburger .bar::before,
+#header .hamburger .bar::after{
+    content: '';
+    position: absolute;
+    width: 100%;height: 100%;
+    left: 0;
+    background-color: white;
+    transition: .3s ease;
+    transition-property: top, bottom;
+}
+#header .hamburger .bar::before{
+    bottom: 8px;
+}
+#header .hamburger .bar::after{
+    top: 8px;
+}
+#header .hamburger.active .bar::before{
+    bottom: 0;
+}
+#header .hamburger.active .bar::after{
+    top: 0;
+}
+/* End Header */
+
+/* Hero Section */
+#hero{
+    background-image: url(../images/DJI_0162.JPEG);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+#hero::after{
+    content: '';
+    position: absolute;
+    left: 0;top: 0;
+    height: 100%;width: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: -1;
+}
+#hero .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+#hero h1{
+    display: block;
+    width: fit-content;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+#hero h1:nth-child(1){
+    animation-delay: 1s;
+}
+#hero h1:nth-child(2){
+    animation-delay: 2s;
+}
+#hero h1:nth-child(3){
+    font-weight: 700;
+    margin-bottom: 0;
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 3s;
+}
+#hero h1 span{
+    position: absolute;
+    top: 0;left: 0;
+    height: 100%;width: 0;
+    background-color: #F8B035;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+}
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+#hero .detail{
+    margin: 30px 0;
+}
+#hero .detail div{
+    color: white;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+#hero .detail .email, .cellphone{
+    font-family: 'roboto',sans-serif;
+    letter-spacing: .05rem;
+}
+#hero .cta{
+    display: inline-block;
+    padding: 8px 17px;
+    color: #F8B035;
+    background-color: transparent;
+    border: 2px solid #F8B035;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    transition: .4s ease;
+    transition-property: background-color, color;
+}
+#hero .cta:hover{
+    color: white;
+    background-color: #F8B035;
+}
+#hero .cta i{
+    color: #F8B035;
+    margin-left: 5px;
+    transform: scale(80%);
+    transition: .4s ease;
+}
+#hero .cta:hover i{
+    color: white;
+}
+/* End Hero Section */
+
+/* About Section */
+#about .about{
+    max-width: 1500px;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#about .section-title{
+    font-weight: 300;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+#about .about_text{
+    max-width: 80%;
+}
+#about .about_text p{
+    font-size: 1.1rem;
+    line-height: 2.3rem;
+}
+#about .about .download{
+    margin-top: 50px;
+}
+#about .about .download a{
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+    padding: 12px 25px;
+    color:#F8B035;
+    border: 2px solid #F8B035;
+    transition: .4s ease;
+}
+#about .about .download a:hover{
+    background-color: #F8B035;
+    color:white;
+}
+#about .download i{
+    color: #F8B035;
+    margin-left: 5px;
+    transform: scale(70%);
+    transition: .4s ease;
+}
+#about .download:hover i{
+    color: white;
+}
+
+/* End About Section */
+
+/* Skill Section */
+#skill .skill{
+    margin: 0 auto;
+    background-color: #283781;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#skill .section-title{
+    color:white;
+    font-size: 2.8rem;
+    margin-top: 100px;
+}
+#skill .skill-group{
+    margin: 50px 0 100px 0;
+    width: 80%;
+}
+#skill .skill-group h4{
+    text-align: left;
+    margin: 50px 0 25px 0;
+    color: #F8B035;
+    font-size: 1.5rem;
+}
+#skill .skill-group .skills{
+    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 5px;
+}
+#skill .skills .skillCard p{
+    text-align: left;
+    margin-top: 0;
+    font-size: 1rem;
+    color: white;
+}
+/* End Section */
+
+/* Project Section */
+#project .project{
+    flex-direction: column;
+}
+#project .section-title{
+    color: #283781;
+    font-size: 3rem;
+    margin-top: 100px;
+}
+#project .project-item{
+    margin-top: 50px;
+    width: 80%;
+}
+#project .item-top{
+    height: 50%;
+    margin: 0 auto;
+}
+#project .item-top img{
+    width: 100%;height: 100%;
+}
+#project .item-bottom h3{
+    color: #283781;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 35px;
+    text-align: left;
+}
+#project .item-bottom h5{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 15px 0 20px 0;
+}
+#project .item-bottom p{
+    font-size: 1rem;
+    line-height: 1.8rem;
+    text-align: left;
+}
+#project .item-bottom a{
+    display: inline-block;
+    position: relative;
+    color: #F8B035;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-top: 15px;
+}
+#project .item-bottom a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;left: 0;
+    background-color: #F8B035;
+    transform-origin: bottom left;
+    transform: scaleX(0);
+    transition: transform .25s ease-out;
+}
+#project .item-bottom a:hover::after{
+    transform: scaleX(1);
+}
+#project .small-img-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#project .item-bottom{
+    margin-bottom: 120px;
+}
+#project .small-img-col{
+    flex-basis: 19%;
+    cursor: pointer;
+    margin-top: 3px;
+}
+#project .small-img-col img{
+    width: 100%;
+}
+/* End Project Section */
+
+/* Education Section */
+#education{
+    background-image: url(../images/BG_2.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+#education::after{
+    content: '';
+    position: absolute;
+    left: 0;top: 0;
+    height: 100%;width: 100%;
+    background-color: #283781;
+    opacity: .9;
+    z-index: -1;
+}
+#education .education{
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+#education .section-title{
+    font-size: 3rem;
+    margin-top: -40px;
+    margin-bottom: 70px;
+}
+#education .timeline-area{
+    width: 90%;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#education .timeline-content{
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+#education .timeline-content:last-child{
+    margin-bottom: 0;
+}
+#education .timeline-content h3{
+    color: #283781;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+#education .timeline-content h5{
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+}
+/* End Education Section */
+
+/* Certificate Section */
+#certificate .certificate{
+    flex-direction: column;
+}
+#certificate .section-title{
+    margin: 100px 0;
+    color: #283781;
+    font-size: 3rem;
+}
+#certificate .c-group{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    grid-gap: 30px;
+    margin-bottom: 150px;
+}
+#certificate .c-box{
+    height: 380px;
+    display: grid;
+    grid-template-rows: 70% 10% 10% 10%;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgba(59, 59, 59, 0.3);
+    transition: all 0.3s ease;
+}
+#certificate .c-box:hover{
+    box-shadow: 0 1px 20px rgba(29, 29, 29, 0.3);
+}
+#certificate .c-img{
+    width: 100%;height: 100%;
+    border-radius: 5px 5px 0 0;
+}
+#certificate .c-box .img{
+    width: 100%;height: 100%;
+    top: 0;left: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 0 0;
+}
+#certificate .c-img a{
+    width: 100%;height: 100%;
+}
+#certificate .c-title{
+    border-top: 1px solid rgba(59, 59, 59, 0.3);
+    text-align: center;
+    padding-top: 15px;
+    font-size: 1.2rem;
+}
+#certificate .c-logo img{
+    width: 100%;height: 100%;
+    object-fit: contain;
+    padding-top: 5px;
+}
+#certificate .c-box:nth-child(1) img{
+    transform: scale(50%);
+}
+#certificate .c-text p{
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0;
+}
+/* End Certificate Section */
+
+/* Score Section */
+#score{
+    background-color: #F8B035;
+}
+#score .score{
+    flex-direction: column;
+}
+#score .section-title{
+    font-size: 3rem;
+    color: white;
+    margin: 100px 0;
+}
+#score .score-group{
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 40px;
+    margin-bottom: 150px;
+}
+#score .score-box{
+    width: 300px;
+    height: 230px;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgba(59, 59, 59, 0.3);
+    transition: all 0.3s ease;
+    animation: boxDown .5s ease-in-out forwards;
+}
+#score .score-box:hover{
+    box-shadow: 0 1px 20px rgba(29, 29, 29, 0.3);
+    animation: boxUp .5s ease-in-out forwards;
+}
+#score .score-box a{
+    width: 100%;height: 100%;
+}
+#score .score-img{
+    width: 100%;height: 100%;
+    object-fit: cover;
+}
+#score .score-img img{
+    width: 100%;height: 100%;
+    border-radius: 5px;
+}
+/* End Score Section */
+
+/* Footer */
+#footer{
+    background-color: #484848;
+}
+#footer .footer{
+    min-height: 200px;
+    flex-direction: column;
+    padding: 50px 0 0 0;
+}
+#footer .footer h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #F8B035;
+    letter-spacing: .2rem;
+    margin: 10px 0;
+}
+#footer .footer h2 a{
+    color: #F8B035;
+}
+#footer .footer-text{
+    width: 90%;
+    margin: 0 auto;
+}
+#footer .footer-text p{
+    color:white;
+    font-size: .5rem;
+    font-weight: 300;
+    letter-spacing: .02rem;
+    text-align: center;
+    margin-top: 0;
+}
+#footer .copyright{
+    padding-bottom: 15px;
+}
+/* End Footer */
+
+/* Keyframes */
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+@keyframes text_reveal_name{
+    100%{
+        color: #F8B035;
+        font-weight: 500px;
+    }
+}
+@keyframes boxUp{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-20px);
+    }
+}
+@keyframes boxDown{
+    from{
+        transform: translateY(-20px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+/* End Keyframes */
+
+/* Media Query For Tablet */
+@media only screen and (min-width:768px){
+    /* Header */
+    /* End Header */
+
+    /* Hero Section */
+    #hero h1{
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+    #hero h1:nth-child(3){
+        font-weight: 700;
+    }
+    #hero .detail div{
+        font-size: 1.2rem;
+    }
+    #hero .cta{
+        padding: 10px 30px;
+        font-size: 1.5rem;
+    }
+    /* End Hero Section */
+
+    /* About Section */
+    #about .section-title{
+        font-size: 3.5rem;
+    }
+    #about .about_text{
+        max-width: 50%;
+    }
+    #about .about_text p{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    #about .about .download a{
+        font-size: 1.5rem;
+        padding: 12px 30px;
+    }
+    /* End About Section */
+    
+    /* Skill Section */
+    #skill .section-title{
+        font-size: 3rem;
+    }
+    #skill .skill-group .skills{
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20%;
+    }
+    #skill .skills .skillCard p{
+        font-size: 1.2rem;
+    }
+    /* End Skill Section */
+
+    /* Project Section */
+    #project .section-title{
+        margin-top: 100px;
+    }
+    #project .project-item{
+        width: 90%;
+        margin: 100px 0 250px 0;
+        display: flex;
+        flex-direction: row;
+    }
+    #project .item-top{
+        width: 45%;
+        float: left;
+        margin-left: 30px;
+    }
+    #project .item-bottom{
+        width: 45%;
+        float:right;
+        margin: 0 auto;
+    }
+    #project .item-bottom h3{
+        margin-top: 0;
+        font-size: 2rem;
+    }
+    #project .item-bottom h5{
+        font-size: 1.5rem;
+    }
+    #project .item-bottom p{
+        font-size: 1.1rem;
+    }
+    /* End Project Section */
+
+    /* Education Section*/
+    #education .timeline-area::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #F8B035;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px black;
+    }
+    #education .timeline-content{
+        width: 50%;
+        margin-bottom: 50px;
+        position: relative;
+    }
+    #education .timeline-content:nth-child(odd){
+        float: left;
+        clear: right;
+        transform: translateX(-25px);
+    }
+    #education .timeline-content:nth-child(even){
+        float: right;
+        clear: left;
+        transform: translateX(25px);
+    }
+    #education .timeline-content::after{
+        content: '';
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        box-shadow: 0 1px 3px black;
+        background-color: #F8B035;
+        top: 0;
+    }
+    #education .timeline-content:nth-child(odd)::after{
+        content: '';
+        transform: translate(50%,-50%);
+        right: -25px;
+        top: 50%;
+    }
+    #education .timeline-content:nth-child(even)::after{
+        content: '';
+        transform: translate(-50%,-50%);
+        left: -25px;
+        top: 50%;
+    }
+    #education .timeline-content h3{
+        font-size: 1.5rem;
+    }
+    #education .timeline-content h5{
+        font-size: 1.1rem;
+    }
+    /* End Education Section */
+
+    /* Certificate Section */
+    #certificate .c-group{
+        width: 60%;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    }
+    /* End Certificate Section */
+
+    /* Score Section */
+    #score .section-title{
+        margin-top: 40px;
+        margin-bottom: 120px;
+    }
+    #score .score-group{
+        display: flex;
+        flex-direction: row;
+        column-gap: 40px;
+    }
+    #score .score-box{
+        width: 400px;
+        height: 300px;
+    }
+    /* End Score Section */
+}
+/* End Media Query For Tablet */
+
+/* Media Query For Desktop */
+@media only screen and (min-width:1200px){
+    /* Header */
+    #header .hamburger{
+        display: none;
+    }
+    #header .nav-list ul{
+        position: initial;
+        display: block;
+        width: fit-content;
+        height: auto;
+        background-color: transparent;
+    }
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+    #header .nav-list ul li a{
+        font-size: 1.3rem;
+    }
+    /* End Header */
+    
+    /* Hero Section */
+    #hero h1{
+        font-size: 4rem;
+    }
+    #hero .detail div{
+        font-size: 1.5rem;
+    }
+    #hero .cta{
+        padding: 20px 30px;
+        font-size: 1.8rem;
+    }
+    /* End Hero Section */
+
+    /* About Section */
+    #about .section-title{
+        font-size: 4rem;
+    }
+    #about .about_text{
+        max-width: 60%;
+    }
+    #about .about_text p{
+        font-size: 1.5rem;
+        line-height: 3rem;
+        text-align: justify;
+    }
+    #about .about .download a{
+        font-size: 1.8rem;
+        padding: 12px 30px;
+    }
+    /* End About Section */
+
+    /* Skill Section */
+    #skill .section-title{
+        font-size: 4rem;
+    }
+    #skill .skill-group{
+        margin-bottom: 150px;
+    }
+    #skill .skill-group .skills{
+        row-gap: 10px;
+    }
+    #skill .skill-group h4{
+        font-size: 2rem;
+    }
+    #skill .skills .skillCard p{
+        font-size: 1.2rem;
+    }
+    /* End Skill Section */
+
+    /* Project Section */
+    #project .section-title{
+        font-size: 4rem;
+    }
+    #project .item-bottom h3{
+        font-size: 2.5rem;
+    }
+    #project .item-bottom h5{
+        font-size: 1.8rem;
+    }
+    #project .item-bottom p{
+        width: 85%;
+        font-size: 1.4rem;
+        line-height: 2.6rem;
+    }
+    #project .item-bottom a{
+        margin-top: 40px;
+        font-size: 1.8rem;
+    }
+    /* End Project Section */
+
+    /* Education Section */
+    #education .section-title{
+        font-size: 4rem;
+        margin-top: -100px;
+        margin-bottom: 170px;
+    }
+    /* End Education Section */
+
+    /* Certificate Section */
+    #certificate .section-title{
+        font-size: 4rem;
+        margin-top: 10px;
+        margin-bottom: 140px;
+    }
+    #certificate .c-group{
+        width: 80%;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    }
+    /* End Certificate Section */
+
+    /* Score Section */
+    #score .section-title{
+        font-size: 4rem;
+        margin-top: 30px;
+        margin-bottom: 150px;
+    }
+    #score .score-box{
+        width: 600px;
+        height: 400px;
+    }
+    /* End Score Section */
+
+    /* Footer */
+    #footer .footer h2{
+        font-size: 1.4rem;
+    }
+    #footer .footer-text p{
+        font-size: .9rem;
+    }
+    /* End Footer */
+}
+/* End Media Query For Desktop */
